@@ -3,7 +3,9 @@ import { ref, onMounted } from 'vue'
 import { doc, getDoc, setDoc } from 'firebase/firestore'
 import { signInAnonymously, onAuthStateChanged } from 'firebase/auth'
 import { db, auth } from '@/firebase'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const name = ref('')
 const skillLevel = ref(3)
 const message = ref('')
@@ -40,6 +42,7 @@ async function save() {
       skillLevel: skillLevel.value,
     })
     message.value = 'Profile saved'
+    router.push('/')
   } catch (e) {
     console.error(e)
     message.value = 'Error: ' + e.message

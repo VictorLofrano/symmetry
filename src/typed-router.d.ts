@@ -38,6 +38,20 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/events/[id]': RouteRecordInfo<
+      '/events/[id]',
+      '/events/:id',
+      { id: ParamValue<true> },
+      { id: ParamValue<false> },
+      | never
+    >,
+    '/events/create': RouteRecordInfo<
+      '/events/create',
+      '/events/create',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/profile': RouteRecordInfo<
       '/profile',
       '/profile',
@@ -61,6 +75,22 @@ declare module 'vue-router/auto-routes' {
     'src/pages/index.vue': {
       routes:
         | '/'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/events/[id].vue': {
+      routes:
+        | '/events/[id]'
+      views:
+        | never
+      pathParamNames:
+        | 'id'
+    }
+    'src/pages/events/create.vue': {
+      routes:
+        | '/events/create'
       views:
         | never
       pathParamNames:
