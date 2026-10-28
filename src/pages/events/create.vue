@@ -4,6 +4,7 @@ import { useRouter } from 'vue-router'
 import { collection, addDoc, serverTimestamp, Timestamp } from 'firebase/firestore'
 import { db } from '../../firebase'
 import { getUser } from '../../auth'
+import { sports } from '../../sports'
 
 const router = useRouter()
 const name = ref('')
@@ -15,6 +16,7 @@ const capacity = ref(10)
 const error = ref('')
 const saving = ref(false)
 const today = new Date().toISOString().slice(0, 10)
+const sport = ref('basketball')
 
 async function publish() {
   error.value = ''
@@ -40,6 +42,7 @@ async function publish() {
       status: 'open',
       confirmedCount: 0,
       createdAt: serverTimestamp(),
+      sport: sport.value,
     })
     router.push(`/events/${docRef.id}`)
   } catch (e) {
@@ -57,6 +60,7 @@ async function publish() {
     <h1 class="text-h5 mt-4">Event details</h1>
     <p class="text-body-2 mb-4">Set up your event so players can join.</p>
 
+    <v-select v-model="sport" :items="sports" item-title="title" item-value="value" label="Sport" variant="outlined" />
     <v-text-field v-model="name" label="Event name" variant="outlined" />
     <v-textarea v-model="description" label="Short description" variant="outlined" rows="2" />
     <v-row>

@@ -59,6 +59,20 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/find/': RouteRecordInfo<
+      '/find/',
+      '/find',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/find/[id]': RouteRecordInfo<
+      '/find/[id]',
+      '/find/:id',
+      { id: ParamValue<true> },
+      { id: ParamValue<false> },
+      | never
+    >,
     '/profile': RouteRecordInfo<
       '/profile',
       '/profile',
@@ -110,6 +124,22 @@ declare module 'vue-router/auto-routes' {
         | never
       pathParamNames:
         | never
+    }
+    'src/pages/find/index.vue': {
+      routes:
+        | '/find/'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/find/[id].vue': {
+      routes:
+        | '/find/[id]'
+      views:
+        | never
+      pathParamNames:
+        | 'id'
     }
     'src/pages/profile.vue': {
       routes:
