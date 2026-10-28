@@ -1,0 +1,15 @@
+{
+  "name": "Symmetry",
+  "short_name": "Symmetry",
+  "description": "Coordinate amateur sports events",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#1976D2",
+  "background_color": "#FFFFFF",
+  "icons": [
+    { "src": "/pwa-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/pwa-512x512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/pwa-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

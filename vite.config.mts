@@ -7,7 +7,9 @@ import Vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [VueRouter({ dts: 'src/typed-router.d.ts' }), Vue({
+  plugins: 
+  
+  [VueRouter({ dts: 'src/typed-router.d.ts' }), Vue({
     template: { transformAssetUrls },
   }), // https://github.com/vuetifyjs/vuetify-loader/tree/master/packages/vite-plugin#readme
   Vuetify({
@@ -25,7 +27,7 @@ export default defineConfig({
         },
       ],
     },
-  })],
+  }),],
   define: { 'process.env': {} },
   resolve: {
     alias: {
